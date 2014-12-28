@@ -8,11 +8,13 @@ layout: post
     <!--main content area-->
     <main>
         <article>
+            {% for post in site.posts %}
                 <h2>
                     <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
                 </h2>
                 <p class="caption">{{ post.date | date: "%b %-d, %Y" }}</p>
                 <p>{{ post.content }}</p>
+            {% endfor %}
         </article>
         <aside>
             <h2 class="aside">About this blog</h2>
