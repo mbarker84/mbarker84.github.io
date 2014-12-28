@@ -3,7 +3,7 @@
         <div class="gallery-container">
             <h3>Recent articles</h3>
             <ul class="gallery">
-                {% for post in site.posts %}
+                {% for post in paginator.posts %}
                 <li class="gallery-item">
                     <div class="gallery-thumb">{% assign foundImage = 0 %}
       {% assign images = post.content | split:"<img " %}
