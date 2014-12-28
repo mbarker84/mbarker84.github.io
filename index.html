@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 ---
 
 <!--body content-->
@@ -7,15 +7,15 @@ layout: post
     
     <!--main content area-->
     <main>
+        {% for post in site.posts limit:1 %}
         <article>
-            {% for post in site.posts %}
                 <h2>
                     <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
                 </h2>
                 <p class="caption">{{ post.date | date: "%b %-d, %Y" }}</p>
                 <p>{{ post.content }}</p>
-            {% endfor %}
         </article>
+        {% endfor %}
         <aside>
             <h2 class="aside">About this blog</h2>
             <p class="aside">THIS BLOG WAS STARTED BY MICHELLE BARKER, DESIGNER AND ILLUSTRATOR WITH FUTURE INSIGHTS.</p>
